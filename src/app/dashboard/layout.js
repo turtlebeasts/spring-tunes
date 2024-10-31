@@ -1,4 +1,9 @@
-import "./globals.css";
+import { ArtistProvider } from "../api/context/ArtistContext";
+import { BannerProvider } from "../api/context/BannerContext";
+import { VideoProvider } from "../api/context/VideoContext";
+import "../globals.css";
+import Header from "./component/header/header";
+import Sidebar from "./component/sidebar/sidebar";
 
 export const metadata = {
   title: "Spring Tunes Entertainment",
@@ -24,7 +29,19 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         ></link>
       </head>
-      <body className={`antialiased`}>{children}</body>
+      <body className={`antialiased`}>
+        <div className="flex">
+          <Sidebar />
+          <div className="w-full ml-64">
+            <Header />
+            <ArtistProvider>
+              <VideoProvider>
+                <BannerProvider>{children}</BannerProvider>
+              </VideoProvider>
+            </ArtistProvider>
+          </div>
+        </div>
+      </body>
     </html>
   );
 }
