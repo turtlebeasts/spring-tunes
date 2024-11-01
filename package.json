@@ -4,9 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "npm install --legacy-peer-deps && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
+  },
+  "packageManager": "npm@10.5.2",
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom"
   },
   "dependencies": {
     "formidable": "^3.5.2",
