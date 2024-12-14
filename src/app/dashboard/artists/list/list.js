@@ -1,5 +1,5 @@
 "use client";
-import ArtistCard from "../artistCard/artistCard";
+import ArtistCard from "@/app/dashboard/artists/artistCard/artistCard";
 import { useArtists } from "@/app/api/context/ArtistContext";
 
 export default function List() {
